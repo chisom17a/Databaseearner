@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chiboyearner Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f2f2f2;
+    }
+
+    header {
+      background: white;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      color: #e60000;
+    }
+
+    .icons img {
+      height: 25px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .welcome-banner {
+      background: #efefef;
+      padding: 10px 15px;
+      font-size: 15px;
+    }
+
+    .dashboard-nav {
+      background: #333;
+      color: white;
+      padding: 12px 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .dashboard-card {
+      background: white;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .greeting {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .membership {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .upgrade-btn {
+      background: #00cc44;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .username {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .balances {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+
+    .balance-box {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 15px;
+      width: 45%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .balance-box h3 {
+      margin: 0;
+      color: green;
+    }
+
+    .balance-box p {
+      margin-top: 5px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .chat-button {
+      position: fixed;
+      bottom: 100px;
+      left: 20px;
+      width: 55px;
+      height: 55px;
+      background: url('https://cdn-icons-png.flaticon.com/512/847/847969.png') no-repeat center;
+      background-size: contain;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .bottom-nav img {
+      display: block;
+      margin: 0 auto 5px;
+      height: 20px;
+    }
+
+    .plus-icon {
+      background: #00cc44;
+      border-radius: 50%;
+      padding: 10px;
+    }
+  </style>
+  <script>
+    // Show popup on click
+    function showActivationMessage() {
+      alert("hello your account is currently not yet activated please contact the support or your referral to activate your account and start earning 💰🏧🏦");
+    }
+
+    // Prompt user for username on load
+    let userName = prompt("Please enter your username:", "") || "";
+
+    // Phone number used for greeting
+    const phoneNumber = "09162141283"; // you can dynamically fetch if needed
+
+    // Inject username and greeting when page loads
+    window.onload = function () {
+      document.getElementById("user-name").innerText = userName ? "Username: " + userName : "";
+      document.getElementById("greeting").innerText = "Hello, " + phoneNumber;
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">chiboyearner</div>
+    <div class="icons">
+      <img onclick="showActivationMessage()" src="https://img.icons8.com/ios-filled/50/000000/plus-math.png" alt="Add">
+      <img onclick="showActivationMessage()" src="https://img.icons8.com/ios-filled/50/000000/naira.png" alt="Naira">
+      <img onclick="showActivationMessage()" src="https://img.icons8.com/ios-filled/50/ffa500/bell.png" alt="Bell">
+      <img onclick="showActivationMessage()" src="https://img.icons8.com/ios-filled/50/000000/menu.png" alt="Menu">
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="welcome-banner">
+    Welcome to chiboyearner, where your business exposure begins
+  </div>
+
+  <!-- Dashboard Navigation -->
+  <div class="dashboard-nav">
+    Dashboard Navigation
+  </div>
+
+  <!-- Main Dashboard Card -->
+  <div class="dashboard-card">
+    <div class="greeting" id="greeting">Hello,</div>
+    <div class="membership">Membership : un active</div>
+    <button class="upgrade-btn" onclick="showActivationMessage()">🧑‍💼 Upgrade</button>
+    <div class="username" id="user-name"></div>
+
+    <div class="balances">
+      <div class="balance-box">
+        <h3>₦0</h3>
+        <p>Deposit Balance</p>
+      </div>
+      <div class="balance-box">
+        <h3>0.0000</h3>
+        <p>Withdraw Balance</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Chat Button -->
+  <a href="https://wa.me/2349162141283" target="_blank" class="chat-button" title="Contact support"></a>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="#" onclick="showActivationMessage()">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home">
+      Home
+    </a>
+    <a href="#" onclick="showActivationMessage()">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/shopping-cart.png" alt="Marketplace">
+      Marketplace
+    </a>
+    <a href="#" onclick="showActivationMessage()">
+      <div class="plus-icon">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/plus-math.png" alt="Advertise">
+      </div>
+      Advertise
+    </a>
+    <a href="#" onclick="showActivationMessage()">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/money.png" alt="Engage">
+      Engage
+    </a>
+    <a href="#" onclick="showActivationMessage()">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/menu.png" alt="More">
+      More
+    </a>
+  </div>
+
+</body>
+</html>
